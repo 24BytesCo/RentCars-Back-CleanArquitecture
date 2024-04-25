@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BCA574D6-F468-49AC-A8D2-63EED4C5315C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArquitectureRentCars", "CleanArquitectureRentCars", "{7967DFA3-CC0B-4C01-BD1E-B91A134DFF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArquitectureRentCars.Domain", "src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\CleanArquitectureRentCars.Domain.csproj", "{3EF34A12-3591-4605-A392-49F792740DF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EF34A12-3591-4605-A392-49F792740DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF34A12-3591-4605-A392-49F792740DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF34A12-3591-4605-A392-49F792740DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF34A12-3591-4605-A392-49F792740DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7967DFA3-CC0B-4C01-BD1E-B91A134DFF15} = {BCA574D6-F468-49AC-A8D2-63EED4C5315C}
+		{3EF34A12-3591-4605-A392-49F792740DF4} = {7967DFA3-CC0B-4C01-BD1E-B91A134DFF15}
+	EndGlobalSection
+EndGlobal

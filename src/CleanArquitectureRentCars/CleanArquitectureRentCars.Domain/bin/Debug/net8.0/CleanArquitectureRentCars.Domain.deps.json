@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CleanArquitectureRentCars.Domain/1.0.0": {
+        "runtime": {
+          "CleanArquitectureRentCars.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CleanArquitectureRentCars.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

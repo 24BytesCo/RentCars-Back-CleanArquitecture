@@ -1,0 +1,11 @@
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\bin\Debug\net8.0\CleanArquitectureRentCars.Domain.deps.json
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\bin\Debug\net8.0\CleanArquitectureRentCars.Domain.dll
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\bin\Debug\net8.0\CleanArquitectureRentCars.Domain.pdb
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.AssemblyInfoInputs.cache
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.AssemblyInfo.cs
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.csproj.CoreCompileInputs.cache
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.dll
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\refint\CleanArquitectureRentCars.Domain.dll
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.pdb
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\ref\CleanArquitectureRentCars.Domain.dll
