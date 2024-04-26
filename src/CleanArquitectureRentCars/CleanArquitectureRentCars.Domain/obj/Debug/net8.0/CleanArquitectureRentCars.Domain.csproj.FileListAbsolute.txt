@@ -9,3 +9,4 @@ C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRent
 C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\refint\CleanArquitectureRentCars.Domain.dll
 C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.pdb
 C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\ref\CleanArquitectureRentCars.Domain.dll
+C:\CleanArquitectureRentCars\src\CleanArquitectureRentCars\CleanArquitectureRentCars.Domain\obj\Debug\net8.0\CleanArquitectureRentCars.Domain.sourcelink.json
