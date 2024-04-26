@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Hi+DAC/qP/EuT71+R1CKOIIeP4YSW9OMkJQ91yzAQU0UMzgrnWwnwgzWQzXc9/okDggJHB5o3GEgSsRIT5KEQQ==",
+  "dgSpecHash": "lhNpHRpg3Qs/Z1QMZqLTOcBRKrdcvGlGHxYF603wMW7QQXFtUvDLePoGea5gCFVGUOVIjF+PhrAtrFs/hit4tA==",
   "success": true,
   "projectFilePath": "C:\\CleanArquitectureRentCars\\src\\CleanArquitectureRentCars\\CleanArquitectureRentCars.Domain\\CleanArquitectureRentCars.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\doradoal\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

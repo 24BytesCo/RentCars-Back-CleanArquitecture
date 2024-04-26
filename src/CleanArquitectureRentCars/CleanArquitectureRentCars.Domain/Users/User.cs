@@ -1,4 +1,5 @@
 using CleanArquitectureRentCars.Domain.Abstractions;
+using CleanArquitectureRentCars.Domain.Users.Events;
 using System;
 
 namespace CleanArquitectureRentCars.Domain.Users
@@ -37,7 +38,7 @@ namespace CleanArquitectureRentCars.Domain.Users
         public Email? Email { get; private set; }
 
         /// <summary>
-        /// Crea una nueva instancia de User.
+        /// Crea una nueva instancia de usuario y dispara un evento informando que se ha creado un nuevo usuario.
         /// </summary>
         /// <param name="nombre">El nombre del usuario.</param>
         /// <param name="apellido">El apellido del usuario.</param>
@@ -49,7 +50,11 @@ namespace CleanArquitectureRentCars.Domain.Users
             Email email
         )
         {
-            return new User(Guid.NewGuid(), nombre, apellido, email);
+            var user =new User(Guid.NewGuid(), nombre, apellido, email);
+            
+            // Generando un evento de dominio para indicar que se ha creado un nuevo usuario.
+            user.RaiseDomainEvent(new UserCreateDomainEvent(user.Id));
+            return user;
         }
     }
 }
