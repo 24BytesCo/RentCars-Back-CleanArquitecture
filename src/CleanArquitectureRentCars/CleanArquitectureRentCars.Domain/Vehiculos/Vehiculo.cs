@@ -67,7 +67,7 @@ namespace CleanArquitectureRentCars.Domain.Vehiculos
         /// <summary>
         /// Obtiene o establece la fecha del último alquiler del vehículo.
         /// </summary>
-        public DateTime? UltimoAlquilerFecha { get; private set; }
+        public DateTime? UltimoAlquilerFecha { get; internal set; }
 
         /// <summary>
         /// Obtiene la lista de accesorios asociados al vehículo.

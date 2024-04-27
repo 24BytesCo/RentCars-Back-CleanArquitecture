@@ -134,27 +134,58 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
         /// <param name="duracionAlquiler">La duración del alquiler (rango de fechas).</param>
         /// <param name="fechaCreacion">La fecha de creación del alquiler.</param>
         /// <returns>Una nueva instancia de Alquiler reservado.</returns>
-        public static Alquiler Reservar(Guid vehiculoId, Guid usuarioAlquila, Guid usuarioRegistra, PrecioDetalle precioDetalle, RangoFechas duracionAlquiler, DateTime fechaCreacion)
+        public static Alquiler Reservar
+        (
+            Vehiculo vehiculo,
+            Guid usuarioAlquila,
+            Guid usuarioRegistra,
+            PrecioService precioService,
+            RangoFechas duracionAlquiler,
+            DateTime fechaCreacion
+        )
         {
-            var alquiler = new Alquiler
-            (
-                Guid.NewGuid(),
-                vehiculoId,
-                usuarioAlquila,
-                usuarioRegistra,
-                precioDetalle.PrecioPerido,
-                precioDetalle.PrecioMantenimiento,
-                precioDetalle.PrecioAccesorios,
-                precioDetalle.PrecioTotal,
-                AlquilerStatus.Reservado,
-                duracionAlquiler,
-                fechaCreacion
-            );
+            try
+            {
+                var precioDetalle = precioService.CalcularPrecio(vehiculo, duracionAlquiler);
 
-            // Generando un evento de dominio para indicar que se ha reservado un nuevo vehículo.
-            alquiler.RaiseDomainEvent(new AlquilerReservadoDomainEvent(alquiler.Id!));
+                var alquiler = new Alquiler
+                (
+                    Guid.NewGuid(),
+                    vehiculo.Id,
+                    usuarioAlquila,
+                    usuarioRegistra,
+                    precioDetalle.PrecioPerido,
+                    precioDetalle.PrecioMantenimiento,
+                    precioDetalle.PrecioAccesorios,
+                    precioDetalle.PrecioTotal,
+                    AlquilerStatus.Reservado,
+                    duracionAlquiler,
+                    fechaCreacion
+                );
 
-            return alquiler;
+                // Generando un evento de dominio para indicar que se ha reservado un nuevo vehículo.
+                alquiler.RaiseDomainEvent(new AlquilerReservadoDomainEvent(alquiler.Id!));
+                vehiculo.UltimoAlquilerFecha = fechaCreacion;
+
+                return alquiler;
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("Ocurrió un error durante la ejecución.", ex);
+                throw new Exception(ex.Message);
+            }
+
+
         }
+    
+    public Result Confirmar(DateTime utcNow)
+    {
+        if (Status != AlquilerStatus.Reservado)
+        {
+            
+        }
+
+    }
+
     }
 }

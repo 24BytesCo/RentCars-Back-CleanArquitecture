@@ -13,7 +13,7 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
         /// <param name="vehiculo">El vehículo que se va a alquilar.</param>
         /// <param name="rangoFecha">El rango de fechas del alquiler.</param>
         /// <returns>El detalle de precios calculado para el alquiler.</returns>
-        public static PrecioDetalle CalcularPrecio(Vehiculo vehiculo, RangoFechas rangoFecha)
+        public PrecioDetalle CalcularPrecio(Vehiculo vehiculo, RangoFechas rangoFecha)
         {
             var tipoMoneda = vehiculo.AlquilerPrecio!.TipoMoneda;
 
