@@ -26,7 +26,7 @@ namespace CleanArquitectureRentCars.Domain.Vehiculos
         /// Crea una nueva instancia de Moneda con un monto de cero y un tipo de moneda en blanco.
         /// </summary>
         /// <returns>Una nueva instancia de Moneda con un monto de cero y un tipo de moneda en blanco.</returns>
-        public static Moneda Cero() => new Moneda(0, TipoMoneda.EnBlanco);
+        public static Moneda Cero() => new(0, TipoMoneda.EnBlanco);
 
         /// <summary>
         /// Crea una nueva instancia de Moneda con un monto de cero y el tipo de moneda especificado.

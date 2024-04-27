@@ -1,4 +1,5 @@
 using CleanArquitectureRentCars.Domain.Abstractions;
+using CleanArquitectureRentCars.Domain.Alquileres.Events;
 using CleanArquitectureRentCars.Domain.Vehiculos;
 using System;
 
@@ -9,6 +10,20 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
     /// </summary>
     public sealed class Alquiler : Entity
     {
+        /// <summary>
+        /// Crea una nueva instancia de Alquiler.
+        /// </summary>
+        /// <param name="id">El identificador único del alquiler.</param>
+        /// <param name="vehiculoId">El identificador del vehículo alquilado.</param>
+        /// <param name="usuarioAlquilaId">El identificador del usuario que alquila el vehículo.</param>
+        /// <param name="usuarioRegistraId">El identificador del usuario que registra el alquiler.</param>
+        /// <param name="precioPeriodo">El precio por período del alquiler.</param>
+        /// <param name="precioMantenimiento">El precio de mantenimiento del vehículo durante el alquiler.</param>
+        /// <param name="precioAccesorios">El precio de los accesorios adicionales seleccionados durante el alquiler.</param>
+        /// <param name="precioTotal">El precio total del alquiler.</param>
+        /// <param name="status">El estado del alquiler.</param>
+        /// <param name="duracionAlquiler">La duración del alquiler (rango de fechas).</param>
+        /// <param name="fechaCreacion">La fecha de creación del alquiler.</param>
         private Alquiler
         (
             Guid id,
@@ -21,11 +36,7 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
             Moneda? precioTotal,
             AlquilerStatus status,
             RangoFechas duracionAlquiler,
-            DateTime fechaCreacion,
-            DateTime fechaConfirmacion,
-            DateTime fechaDenegacion,
-            DateTime fechaCompletado,
-            DateTime fechaCancelacion
+            DateTime fechaCreacion
         ) : base(id)
         {
             VehiculoId = vehiculoId;
@@ -38,10 +49,7 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
             Status = status;
             DuracionAlquiler = duracionAlquiler;
             FechaCreacion = fechaCreacion;
-            FechaConfirmacion = fechaConfirmacion;
-            FechaDenegacion = fechaDenegacion;
-            FechaCompletado = fechaCompletado;
-            FechaCancelacion = fechaCancelacion;
+
         }
 
         /// <summary>
@@ -113,5 +121,40 @@ namespace CleanArquitectureRentCars.Domain.Alquileres
         /// Obtiene la fecha de cancelación del alquiler.
         /// </summary>
         public DateTime FechaCancelacion { get; private set; }
+
+        //Metodos
+
+        /// <summary>
+        /// Reserva un vehículo para alquilar.
+        /// </summary>
+        /// <param name="vehiculoId">El identificador del vehículo a alquilar.</param>
+        /// <param name="usuarioAlquila">El identificador del usuario que alquila el vehículo.</param>
+        /// <param name="usuarioRegistra">El identificador del usuario que registra el alquiler.</param>
+        /// <param name="precioDetalle">El detalle de precios para el alquiler.</param>
+        /// <param name="duracionAlquiler">La duración del alquiler (rango de fechas).</param>
+        /// <param name="fechaCreacion">La fecha de creación del alquiler.</param>
+        /// <returns>Una nueva instancia de Alquiler reservado.</returns>
+        public static Alquiler Reservar(Guid vehiculoId, Guid usuarioAlquila, Guid usuarioRegistra, PrecioDetalle precioDetalle, RangoFechas duracionAlquiler, DateTime fechaCreacion)
+        {
+            var alquiler = new Alquiler
+            (
+                Guid.NewGuid(),
+                vehiculoId,
+                usuarioAlquila,
+                usuarioRegistra,
+                precioDetalle.PrecioPerido,
+                precioDetalle.PrecioMantenimiento,
+                precioDetalle.PrecioAccesorios,
+                precioDetalle.PrecioTotal,
+                AlquilerStatus.Reservado,
+                duracionAlquiler,
+                fechaCreacion
+            );
+
+            // Generando un evento de dominio para indicar que se ha reservado un nuevo vehículo.
+            alquiler.RaiseDomainEvent(new AlquilerReservadoDomainEvent(alquiler.Id!));
+
+            return alquiler;
+        }
     }
 }
